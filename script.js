@@ -1,19 +1,25 @@
 // DOM elements
-const resultEl = document.getElementById();
-const lengthEl = document.getElementById();
-const uppercaseEl = document.getElementById();
-const resultEl = document.getElementById();
-const resultEl = document.getElementById();
-const resultEl = document.getElementById();
-const resultEl = document.getElementById();
-const resultEl = document.getElementById();
+const resultEl = document.getElementById('result');
+const lengthEl = document.getElementById('length');
+const uppercaseEl = document.getElementById('uppercase');
+const lowercaseEl = document.getElementById('lowercase');
+const numbersEl = document.getElementById('numbers');
+const symbolsEl = document.getElementById('symbols');
+const generateEl = document.getElementById('generate');
+const clipboardEl = document.getElementById('clipboard');
 
 const randomFunc = {
     lower: getRandomLower,
     upper: getRandomUpper,
     num: getRandomNum,
     special: getRandomSpecial
-}
+};
+
+generateEl.addEventListener('click', () => {
+    const length = length.value;
+
+    console.log(length);
+})
 
 // Generator functions
 
@@ -34,5 +40,5 @@ function getRandomSpecial() {
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-console.log(getRandomSpecial());
+
 
