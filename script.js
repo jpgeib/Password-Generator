@@ -29,7 +29,19 @@ generateEl.addEventListener('click', () => {
 
 //Copy password to clipboard
 clipboardEl.addEventListener('click', () => {
-    const textarea = document.create
+    const textarea = document.getElementsByTagName('textarea');
+    const passwordContent = passwordEl.innerText;
+
+    if(!passwordContent) {
+        return;
+    }
+
+    textarea.value = passwordContent;
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+    alert('Password copied to clipboard!');
+
 })
 
 
