@@ -1,7 +1,7 @@
 .wrapper {
     background-color: blue;
     border: solid black 2px;
-    padding: 0 0 40px 0;
+    padding: 0 0 60px 0;
     margin: 0 100px;
 }
 
@@ -14,4 +14,19 @@ header {
 }
 .settings {
     text-align: center;
+    padding: 0 0 20px 0;
+}
+
+#generate {
+    float: left;
+    padding: 10px;
+    border: solid black 2px;
+    margin: 0 10px;
+}
+
+#clipboard {
+    float: right;
+    padding: 10px;
+    border: solid black 2px;
+    margin: 0 10px;
 }
