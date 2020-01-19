@@ -50,9 +50,9 @@ clipboardEl.addEventListener('click', () => {
 function generatePassword(lower, upper, number, special, length) {
     let result = '';
     const typesCount = lower + upper + number + special;
-    // console.log('typesCount: ', typesCount);
+    
     const typesArr = [{lower}, {upper}, {number}, {special}].filter(item => Object.values(item)[0]);
-    // console.log('typesArr: ', typesArr);
+    
 
     if(typesCount === 0) {
         return '';
@@ -61,7 +61,7 @@ function generatePassword(lower, upper, number, special, length) {
     for(let i = 0; i < length; i += typesCount) {
         typesArr.forEach(type => {
             const funcName = Object.keys(type)[0];
-            // console.log('funcName: ', funcName);
+            
 
             result += randomFunc[funcName]();
         });
