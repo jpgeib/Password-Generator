@@ -29,16 +29,12 @@ generateEl.addEventListener('click', () => {
 
 //Copy password to clipboard
 clipboardEl.addEventListener('click', () => {
-    const textarea = document.getElementsByTagName('textarea');
-    const passwordContent = passwordEl.innerText;
-
-    if(!passwordContent) {
-        return;
-    }
-
-    textarea.value = passwordContent;
+    const textarea = document.getElementById('password');
+  
+    textarea.focus();
     textarea.select();
     document.execCommand('copy');
+   
     textarea.remove();
     alert('Password copied to clipboard!');
 
@@ -56,7 +52,18 @@ function generatePassword(lower, upper, number, special, length) {
 
     if(typesCount === 0) {
         return '';
-    }
+    }; 
+    
+    if (length < 8) {
+        alert('Password length must be at least 8 characters');
+        return '';
+      };
+      
+    if (length > 128) {
+        alert('Password length must less than 129 characters');
+        return '';
+      };
+
 
     for(let i = 0; i < length; i += typesCount) {
         typesArr.forEach(type => {
